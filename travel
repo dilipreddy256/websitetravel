@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="header">
+        <h2 class="title">Pricetym<span class="titleend">.com</span></h2>
+        <p class="caption">we value your money</p> 
+    </div>
+    <nav >
+        <div class="nav-links">
+            <div>
+                <h4 class="icon">Pricetym<span class="iconend">.com</span></h4>
+            </div>
+            
+                <ul>
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">Discover</a></li>
+                   <li><a href="#">About Us</a></li>
+                   <li><a href="#">Contact Us</a></li>
+                  
+                </ul> 
+                <a class="login" href="#"><button>SIGN - IN/UP</button></a>
+            
+        </div>
+    </nav>
+    <section class="home">
+        <div class="container">
+           <div class="row">
+               <div class="home-text">
+                    <h1>TOURS AND TRAVELS</h1>
+                    <p class="animate-text">
+                       <span>Budget Firendly Hotel & Holiday Packages</span>
+                       <span>Best Hotels Booking experience At Low Cost</span>
+                       <span>City Tours with 24*7  Cab,Bus Booking Facility Avaliable</span>
+                       <span>pre planned budget discussion holiday packages</span>
+                       <span>pricetym always saves you time & money</span>
+                    </p>
+               </div>
+           </div>
+        </div>
+    </section>
+    <script>
+        const txts=document.querySelector(".animate-text").children,
+txtsLen=txts.length;
+let index=0;
+const textInTimer=3000,
+ textOutTimer=2800;
+
+function animateText() {
+for(let i=0; i<txtsLen; i++){
+txts[i].classList.remove("text-in","text-out");  
+}
+txts[index].classList.add("text-in");
+
+setTimeout(function(){
+ txts[index].classList.add("text-out");              
+},textOutTimer)
+
+setTimeout(function(){
+
+if(index == txtsLen-1){
+   index=0;
+ }
+else{
+    index++;
+  }
+ animateText();
+},textInTimer); 
+}
+
+window.onload=animateText;
+    </script>
+       
+
+</body>
+</html>
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    margin:0;
+    padding: 0;
+
+}
+.header
+{
+    background:rgb(255,255,255) ;
+    max-width: 100%;
+    height: 150px;
+}
+.title
+{
+    text-align: center;
+    color: #FFDC00;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    font-size: 60px;
+    font-weight:bold;
+    margin: 0px;
+    cursor: pointer;
+}
+.titleend
+{
+    color:#8cd5ff;
+    writing-mode: vertical-rl;
+    font-size:14px;
+    cursor: pointer;
+}
+.caption
+{
+    text-align:center;
+    font-size:20px;
+    color:#FFDC00;  
+}
+.nav-links
+{    
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:22px 250px 20px 200px;
+    height: 30px;
+    list-style: none;
+    background: rgb(255,44,69);
+ }
+ .icon
+ {
+    text-align: center;
+    color: #FFDC00;
+    font-size:44px;
+    font-weight:bold;
+    cursor: pointer;
+ }
+ .iconend
+ {
+    color:#8cd5ff;
+    writing-mode: vertical-rl;
+    font-size:10px;
+    cursor: pointer;
+ }
+ .nav-links li  
+ {
+    display:inline-block;
+    width: 150px;
+ }
+.nav-links li a{
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFDC00;
+    
+}
+.nav-links li a:hover
+{
+    border: 3px solid #FFDC00;
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+}
+button
+{
+       background-color: rgb(255,255,255) ;
+       width: 180px;
+       height: 30px;
+       letter-spacing: 3px;
+       border: none;
+       text-decoration: none;
+       font-size: 14px;
+       font-weight: bold;
+       color: #FFDC00;
+       cursor: pointer;
+}
+button:hover
+{
+    border: 3px solid #FFDC00;
+    border-radius: 10px;
+    padding: 5px 15px 20px 15px;
+}
+.container{
+    max-width: 1170px;
+    width: 100%;
+    margin:auto;
+}
+
+.home{
+    height: 80vh;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding:50px 15px;
+    position: relative;
+}
+.home::before{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+}
+
+.home .home-text{
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home .home-text h1{
+   color:#ffffff;
+   font-size: 50px;
+   color:#ffffff;
+   line-height: 56px;
+   font-weight: 700;
+   margin:0 0 20px;
+}
+.home .home-text p{
+   margin:0;
+   overflow: hidden;
+}
+.home .home-text p span{
+   font-size: 40px;
+   color:#ff2c45;
+   font-weight: 700;
+   display: inline-block;
+   line-height: 46px;
+   display: none;
+}
+
+.home .home-text p span.text-in{
+   display: block;
+   animation: textIn .5s ease;
+}
+.home .home-text p span.text-out{
+   animation: textOut .5s ease;
+}
+@keyframes textIn{
+   0%{
+       transform: translateY(100%);
+   }
+   100%{
+       transform: translateY(0%);
+   }
+}
+@keyframes textOut{
+   0%{
+       transform: translateY(0%);
+   }
+   100%{
+       transform: translateY(-100%);
+
+   }
+}
+
+
+
